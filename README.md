@@ -166,6 +166,11 @@ Generated resources use a PascalCase model, a `<Name>Resource` resource class, a
 Standard resources inherit `list`, `get`, `create`, `update`, `delete`, `paginate`, and `iter_pages`. Custom methods are
 reserved for action endpoints or special payloads.
 
+## Related projects
+
+Looking for PHP? See [`azero/rentmanager_php`](https://github.com/azero/rentmanager_php), the PHP version of this Rent
+Manager API library.
+
 ## Development
 
 Run the same checks used by CI:
