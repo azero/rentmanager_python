@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling>=1.31"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rentmanager-api"
+version = "0.1.0"
+description = "Typed synchronous and asynchronous Python SDK for Rent Manager WAPI12."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+authors = [{ name = "AZer0" }]
+keywords = ["rent-manager", "property-management", "wapi", "sdk", "api-client"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: Other/Proprietary License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx>=0.27,<1",
+  "pydantic>=2.7,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/azero/rentmanager_python"
+Repository = "https://github.com/azero/rentmanager_python"
+Issues = "https://github.com/azero/rentmanager_python/issues"
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8,<10",
+  "pytest-asyncio>=0.23,<2",
+]
+dev = [
+  "build>=1.2,<2",
+  "pytest>=8,<10",
+  "pytest-asyncio>=0.23,<2",
+  "ruff>=0.15,<1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_landscaping_ticket_workflow.py" = ["E402"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rentmanager_api"]
