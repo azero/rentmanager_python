@@ -44,7 +44,7 @@ dev = [
   "build>=1.2,<2",
   "pytest>=8,<10",
   "pytest-asyncio>=0.23,<2",
-  "ruff>=0.15,<0.16",
+  "ruff>=0.15,<0.17",
 ]
 
 [tool.pytest.ini_options]
@@ -55,6 +55,9 @@ asyncio_mode = "auto"
 [tool.ruff]
 target-version = "py310"
 line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/test_landscaping_ticket_workflow.py" = ["E402"]
