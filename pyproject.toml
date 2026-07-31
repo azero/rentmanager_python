@@ -56,6 +56,9 @@ asyncio_mode = "auto"
 target-version = "py310"
 line-length = 120
 
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
 [tool.ruff.lint.per-file-ignores]
 "tests/test_landscaping_ticket_workflow.py" = ["E402"]
 
